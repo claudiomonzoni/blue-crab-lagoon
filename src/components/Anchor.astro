@@ -1,0 +1,44 @@
+---
+interface Props {
+    url: string;
+    clase: string;
+    texto: string;
+}
+
+const { url, clase, texto, ...rest } = Astro.props;
+---
+
+<a href={url} class:list={[clase]} {...rest} set:html={texto}></a>
+
+<style lang="scss">
+	@import "../estilos/variables.scss";
+	@mixin anchor{
+        display: inline-block;
+		padding: .5rem $margen-cel;
+		text-align: center;
+        max-width: fit-content;
+        @extend .anime;
+	}
+	
+    .btn{
+        @include anchor;
+    }
+    .claro{
+        border: solid 1px $acento;
+        &:hover{
+            color: white;
+            background: $acento;
+            @extend .sombra;
+        }
+    }
+    .oscuro{
+        border: none;
+        background: $secundario;
+        &:hover{
+            color: white;
+            background: $acento;
+            @extend .sombra;
+        }
+    }
+
+</style>

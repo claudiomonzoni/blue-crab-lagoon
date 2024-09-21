@@ -1,0 +1,144 @@
+---
+import { Picture } from "astro:assets"
+import cover from "../assets/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp"
+import coverCel from "../assets/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp"
+import Anchor from "./Anchor.astro"
+
+---
+
+<div id="hero">
+    <nav>
+        <div class="logo">
+            <img src="./blue-crab-lagoon-hotel-logo.svg" alt="logo">
+        </div>
+        <ul>
+            <li><a href="#">The place</a></li>
+            <li><a href="#">The rooms</a></li>
+            <li><a href="#">The services</a></li>
+            <li><a href="#">The activities</a></li>
+            <li><a href="#"><img src="./mex-flag.jpg" alt="Español" class="flag"></a></li>
+            <li><img src="/scuba-flag.jpg" alt="Scuba dive" class="flag"></li>
+        </ul>
+        <Anchor url="#booknow" clase="btn oscuro" texto="Book now" />
+        
+    </nav>
+    
+    <div id="hero-ima">
+         <!-- <Picture src={cover} alt="Blue Crab Lagoon Hotel in Barra de Potosí" /> -->
+         <!-- <Picture 
+         src=''
+         alt="Blue Crab Lagoon Hotel in Barra de Potosí"
+         widths={[400, 800, 1200]}
+         sizes={`(max-width: 479px) 100vw,(max-width: 768px) 100vw,(max-width: 1600px) 100vw. ${cover.width}px`}
+         >
+            <source srcset={cover} type="image/webp" media="(min-width: 479px)" width={cover.width} height={cover.height} />
+            <source srcset={coverCel} type="image/webp" media="(max-width: 479px)" width={cover.width} height={cover.height} />
+            <img src='' alt="Blue Crab Lagoon Hotel in Barra de Potosí" width={cover.width} height={cover.height} />
+         </Picture> -->
+
+         <!-- <picture>
+            <source media="(min-width:479px)" srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp">
+            <source media="(max-width:479px)" srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp" width="100" height="100">
+            <img src="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" alt="Flowers" style="width:auto;">
+          </picture> -->
+
+          <picture>
+            <source srcset="https://via.placeholder.com/1200x600" media="(min-width: 1400px)"/>
+            <source srcset="https://via.placeholder.com/1000x400" media="(min-width: 1200px)"/>
+            <source srcset="https://via.placeholder.com/800x300" media="(min-width: 800px)"/>
+            <source srcset="https://via.placeholder.com/479x600" media="(min-width: 600px)"/>
+            <img src="https://via.placeholder.com/479x700" alt="example"/>
+          </picture>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../estilos/variables.scss";
+    #hero{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        height: auto;
+        position: relative;
+    }
+    nav {
+        font-family: "Playfair Display", serif;
+    
+        display: flex;
+        flex-wrap:wrap;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 100;
+        padding: $margen-min;
+        height: auto;
+        align-items: center;
+        a{
+            color: white;
+            text-shadow: 0px 2px 8px #0e0e0e;
+        }
+     
+        img{
+            width: 100%;
+            max-width: 15vw;
+            height: auto;
+        }
+        .logo{
+            text-align: left;
+            padding-left: .5rem;
+        }
+        .logo, a{
+            flex: 1 0 content;
+        }
+        ul{
+            flex: 2 0 content;
+        }
+    
+    }
+    
+    #hero-ima {
+        width: 100%;
+        height: auto;
+        grid-column: 1;
+        grid-row: 1/-1;
+      picture img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend .sombra;
+        }
+        
+    }
+    ul {
+        display: flex;
+        flex-wrap:wrap;
+        li{
+            list-style: none;
+        }
+    }
+
+
+    @include cel {
+          #hero-ima img{
+            height: 60dvh;
+          }
+          ul, nav{
+            justify-content: center;
+          }
+          nav img{
+            max-width: 60vw;
+          }
+          nav ul{
+            display: none;
+          }
+          nav a{
+            margin: $margen-cel 0!important;
+        }
+        nav .logo{
+            text-align: center;
+            padding-left: none;
+        }
+        nav {
+            gap: 1rem;
+          }
+        }
+</style>
