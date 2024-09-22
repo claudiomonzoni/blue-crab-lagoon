@@ -43,11 +43,9 @@ import Anchor from "./Anchor.astro"
           </picture> -->
 
           <picture>
-            <source srcset="https://via.placeholder.com/1200x600" media="(min-width: 1400px)"/>
-            <source srcset="https://via.placeholder.com/1000x400" media="(min-width: 1200px)"/>
-            <source srcset="https://via.placeholder.com/800x300" media="(min-width: 800px)"/>
-            <source srcset="https://via.placeholder.com/479x600" media="(min-width: 600px)"/>
-            <img src="https://via.placeholder.com/479x700" alt="example"/>
+            <source srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" media="(min-width: 479px)"/>
+            <source srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp" media="(max-width: 479px)"/>
+            <img src="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" alt="Blue Crab Lagoon Hotel in Barra de Potosí"/>
           </picture>
     </div>
 </div>
@@ -126,6 +124,7 @@ import Anchor from "./Anchor.astro"
           }
           nav img{
             max-width: 60vw;
+        
           }
           nav ul{
             display: none;
@@ -136,6 +135,8 @@ import Anchor from "./Anchor.astro"
         nav .logo{
             text-align: center;
             padding-left: none;
+      
+            
         }
         nav {
             gap: 1rem;

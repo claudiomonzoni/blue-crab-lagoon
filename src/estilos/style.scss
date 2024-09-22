@@ -121,10 +121,10 @@ b {
   display: grid;
   grid-template-columns: [pantalla-start] 5vw [extra-start] 5vw [contenido-start] 1fr [contenido-end] 5vw [extra-end] 5vw [pantalla-end];
   @include hd {
-    grid-template-columns: [pantalla-start] 6vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 6vw [pantalla-end];
+    grid-template-columns: [pantalla-start] 2vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 2vw [pantalla-end];
   }
   @include hdplus {
-    grid-template-columns: [pantalla-start] 6vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 6vw [pantalla-end];
+    grid-template-columns: [pantalla-start] 3vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 3vw [pantalla-end];
   }
 }
 .contenido > * {
@@ -142,7 +142,7 @@ b {
 .pantalla-izq > * {
   grid-column: pantalla-start / contenido-end;
   @include cel {
-    grid-column: contenido;
+    grid-column: pantalla;
   }
 }
 .pantalla-der > * {
@@ -187,6 +187,41 @@ b {
     }
     p{
       max-width: 70vw;
+    }
+  }
+}
+section{
+  margin: $margen 0;
+
+}
+
+#bandeja-steps{
+  display: flex;
+  flex-wrap: wrap;
+  .izq{
+    flex: 1 0 60%;
+    img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  .der{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 40%;
+    .info{
+      width: 70%;
+    }
+  }
+  @include cel{
+    .izq, .der{
+      flex: 1 0 100%;
+      text-align: center;
+      h2{
+        margin-top: $margen;
+      }
     }
   }
 }

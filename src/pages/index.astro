@@ -2,6 +2,8 @@
 import Anchor from '../components/Anchor.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import steps from '../assets/steps-from-the-sea.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Boutique Hotel in Barra de Potosí México.">
@@ -14,6 +16,24 @@ import Layout from '../layouts/Layout.astro';
 			</p>
 			<Anchor url="#rooms" clase="btn claro" texto="Book now" />
 		</div>
+		
+		<section id="steps" class="grid pantalla-izq">
+			<div id="bandeja-steps">
+				<div class="izq">
+					<Image src={steps} alt="Steps from the sea" />
+				</div>
+
+				<div class="der">
+					<div class="info">
+						<h2>Steps from the sea and the lagoon of Barra de Potosí</h2>
+					<p><b>Blue Crab Lagoon</b> offers you the chance to taste the best fresh seafood at more than 20 local restaurants and experience authentic local hospitality.</p>
+					</div>
+
+				</div>
+
+			</div>	
+
+		</section>
 	</main>
 </Layout>
 
