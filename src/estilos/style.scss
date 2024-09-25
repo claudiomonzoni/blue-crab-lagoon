@@ -225,3 +225,30 @@ section{
     }
   }
 }
+
+#headerRooms{
+
+  h2{
+    color: $primario;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+    #exclusive{
+      position: absolute;
+      top: -40%;
+      left: 100%;
+      align-self: center;
+      font-size: clamp(1rem, .5vw, .5rem);
+      color: $primario;
+    }
+    #ocho{
+      padding: $margen-min .5rem;
+      color: $secundario;
+      font-size: clamp(6rem, 6vw, 6rem);
+      font-weight: bold;
+      position: relative;
+    }
+  }
+}

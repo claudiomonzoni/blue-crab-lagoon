@@ -3,6 +3,12 @@ import Anchor from '../components/Anchor.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import steps from '../assets/steps-from-the-sea.jpg';
+// imagenes del cuarto
+import observe from '../assets/observe.png';
+import enjoy from '../assets/enjoy.png';
+import feed from '../assets/feed.png';
+import rest from '../assets/rest.png';
+import cool from '../assets/cool.png';
 import { Image } from 'astro:assets';
 ---
 
@@ -32,6 +38,50 @@ import { Image } from 'astro:assets';
 				</div>
 
 			</div>	
+
+		</section>
+
+		<section id="headerRooms" class="grid contenido">
+			
+			<h2><span id="ocho">8 <span id="exclusive">Exclusive</span></span> rooms near <br> the sea</h2>
+		<div id="cuadricula">
+			<div class="fila">
+				<div class="conte">
+					<h3>Observe</h3>
+					<p>Wake up to the sound of the waves and enjoy the <b>stunning view of the Pacific Ocean</b> from your window.</p>
+				</div>
+				<Image src={observe} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<h3>Enjoy</h3>
+					<p><b>Relax</b> while reading a book, sipping great coffee, or taking a nap in your hammock.</p>
+				</div>
+				<Image src={enjoy} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<h3>Aliméntate</h3>
+					<p>Our rooms provide a wonderful experience with  equipped <b>kitchenettes</b></p>
+				</div>
+				<Image src={feed} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<h3>Rest</h3>
+					<p>We make sure each room is equipped with <b>comfortable beds</b> to give you the rest you’ll appreciate after a day of adventure in nature.</p>
+				</div>
+				<Image src={rest} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<h3>Cool comfort</h3>
+					<p>No matter the time of year you visit, your room will be fresh and comfortable, as all our rooms have <b>air conditioning</b>.</p>
+				</div>
+				<Image src={cool} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
+			</div>
+		</div>
+
 
 		</section>
 	</main>
