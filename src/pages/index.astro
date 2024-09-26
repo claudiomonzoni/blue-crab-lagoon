@@ -9,6 +9,10 @@ import enjoy from '../assets/enjoy.png';
 import feed from '../assets/feed.png';
 import rest from '../assets/rest.png';
 import cool from '../assets/cool.png';
+import sunset from '../assets/sunset-barra-potosi.png';
+import beach from '../assets/beach-lagoon-potosi.png';
+import proximidad from '../assets/proximidad-ixtapa-zihuatanejo.png';
+import aeropuerto from '../assets/ixtapa-zihuatanejo-aeropuerto.png';
 import { Image } from 'astro:assets';
 import Galeria from '../components/Galeria.astro';
 ---
@@ -96,6 +100,85 @@ import Galeria from '../components/Galeria.astro';
 				<Galeria />
 			</div>
 
+		</section>
+
+		<section>
+			<div class="grid contenido">
+				
+				<h2 class="centro">Services and Amenities</h2>
+				<div id="services">
+					<div class="servicio">
+						<img src="/icos/pool.svg" alt="pool and common areas">
+						<h3>Pool and common areas</h3>
+						<p>Enjoy our facilities, including a <b>refreshing infinity pool and garden</b>. Relax under the sun or lounge in our shaded area with comfy sofas.</p>
+					</div>
+					<div class="servicio">
+						<img src="/icos/air.svg" alt="Air-conditioned rooms">
+						<h3>Air-conditioned rooms</h3>
+						<p>Enjoy our facilities, including a <b>refreshing infinity pool and garden</b>. Relax under the sun or lounge in our shaded area with comfy sofas.</p>
+					</div>
+					<div class="servicio">
+						<img src="/icos/internet.svg" alt="Internet">
+						<h3>Internet</h3>
+						<p>We offer <b>broadband internet</b> in common areas and rooms.</p>
+					</div>
+					<div class="servicio">
+						<img src="/icos/terraces.svg" alt="Terraces">
+						<h3>Terraces</h3>
+						<p>Enjoy the sunset from your <b>room's terrace</b> and watch as the sun slowly sinks into the Pacific Ocean.</p>
+					</div>
+					<div class="servicio">
+						<img src="/icos/cocinas.svg" alt="Kitchenettes">
+						<h3>Kitchenettes</h3>
+						<p>Our rooms are equipped with a <b>sink, microwave, and mini-fridge</b>, offering the convenience of preparing a quick meal without leaving your room.</p>
+					</div>
+					<div class="servicio">
+						<img src="/icos/water.svg" alt="hot water">
+						<h3>Hot Water</h3>
+						<p>All of our 8 rooms feature bathrooms with <b>hot water showers</b>, giving you the comfort of adjusting your shower temperature in the midst of paradise.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="headerRooms" class="grid contenido">
+			
+			<h2>Location and surroundings</h2>
+		<div id="cuadricula">
+			<div class="fila">
+				<div class="conte">
+					<div class="bande"><h3>Barra de Potosí</h3>
+						<p>Located in Barra de Potosí, a charming town near Ixtapa Zihuatanejo where you’ll find local fishermen and artisans, Blue Crab Lagoon gives you the <b>chance to savor the best fresh seafood</b> in the area's restaurants and experience authentic local hospitality.</p></div>
+				</div>
+				<Image src={sunset} alt="Sunset in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<div class="bande"><h3>Beach and lagoon</h3>
+						<p>Just a few meters from the beach and the lagoon, our hotel offers easy access to both natural areas. During the rainy season, the sandbar that connects the sea and lagoon <b>becomes a spectacular natural sight</b> not to be missed.</p></div>
+				</div>
+				<Image src={beach} alt="Beach and lagoon hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<div class="bande">
+						<h3>Proximity a Ixtapa Zihuatanejo</h3>
+					<p><b>We're just a 15-minute drive</b> from the port of Zihuatanejo and Ixtapa, providing you the convenience of exploring these vibrant towns and their beaches.</p>
+					</div>
+				</div>
+				<Image src={proximidad} alt="Near to Ixtapa Zihuatanejo hotel in Barra de Potosí Mexico" />
+			</div>
+			<div class="fila">
+				<div class="conte">
+					<div class="bande">
+						<h3>Access to the Ixtapa Zihuatanejo international airport</h3>
+						<p>Airport is <b>only 10 minutes away</b>, making your arrival and departure hassle-free.</p>
+					</div>
+				</div>
+				<Image src={aeropuerto} alt=" hotel in Barra de Potosí Mexico near to the Ixtapa Zihuatanejo international airport" />
+			</div>
+			
+		</div>
 		</section>
 	</main>
 </Layout>

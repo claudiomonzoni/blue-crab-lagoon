@@ -250,6 +250,10 @@ section {
 #cuadricula {
   margin: $margen 0;
   background: linear-gradient(90deg, white 3%, $fondo 3%, $fondo 97%, white 97%);
+  h3{
+    font-size: clamp(1.8rem, 2vw, 2rem);
+    color: $acento;
+  }
   .fila {
     display: flex;
     flex-wrap: wrap;
@@ -259,6 +263,12 @@ section {
       display: inherit;
       align-items: center;
       justify-content: center;
+      
+      @include tableta_land {
+        flex: 1 0 40%;
+        max-width: 50%;
+      }
+      
       .bande {
         width: 70%;
         margin: 0 0 0 3%;
@@ -267,11 +277,21 @@ section {
           margin: 0;
           text-align: center;
         }
+        @include tableta {
+          padding: $margen 0;
+          margin: 0;
+          text-align: center;
+        }
+        
       }
     }
     img {
       flex: 1 0 50%;
       @extend .sombra;
+      @include tableta_land {
+        max-width: 50%;
+        flex: 1 0 10%;
+      }
     }
 
     &:nth-child(even) {
@@ -286,7 +306,28 @@ section {
         order: 0;
        }
       }
+      @include tableta {
+       .conte{
+        order: 0;
+       }
+      }
     }
   }
 
+}
+.centro{
+  text-align: center;
+}
+
+#services {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  .servicio {
+    flex: 1 0 33%;
+    padding: $margen;
+    @include cel {
+      flex: 1 0 100%;
+    }
+  }
 }
