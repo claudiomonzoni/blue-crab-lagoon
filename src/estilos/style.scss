@@ -2,11 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat+Alternates:wght@300;400;500;600;700&display=swap");
 
-
-
 html {
   box-sizing: border-box;
   font-size: clamp(10px, 0.9vw, 22px);
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 100;
+  background: white;
+  scroll-behavior: smooth;
+
   @include hd {
     font-size: clamp(10px, 0.9vw, 20px);
   }
@@ -16,11 +19,6 @@ html {
   @include hdplus {
     font-size: clamp(14px, 7vw, 22px);
   }
-
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 100;
-  background: #fff6f0;
-  scroll-behavior: smooth;
 }
 
 *,
@@ -89,8 +87,6 @@ a {
   text-decoration: none;
   display: inline-block;
   color: $primario;
-  
-
 }
 .selected {
   color: $acento;
@@ -99,10 +95,10 @@ a {
 }
 p {
   margin-bottom: 0.6rem;
+  color: $primario;
   @include cel {
     line-height: 1.4;
   }
-  color: $primario;
 }
 p:last-child {
   margin-bottom: 0rem;
@@ -147,9 +143,9 @@ b {
 }
 .pantalla-der > * {
   grid-column: contenido-start / pantalla-end;
-  @include cel {
-    grid-column: contenido;
-  }
+  // @include cel {
+  //   grid-column: pantalla;
+  // }
 }
 .pantalla-der-especial > * {
   grid-column: contenido-start / pantalla-end;
@@ -158,97 +154,139 @@ b {
   }
 }
 
-#heroe{
-  
-  h1{
+#heroe {
+  h1 {
     color: $primario;
     line-height: 4rem;
     margin: $margen 0;
-    span{
+    text-align: center;
+    span {
       color: $secundario;
       font-size: clamp(1.8rem, 3.5vw, 3.5rem);
     }
-    @include cel{
+    @include cel {
       line-height: 1em;
     }
   }
-  p{
+  p {
     max-width: 70ch;
     margin: 0 auto;
     padding-bottom: $margen-cel;
   }
-  a{
+  a {
     margin: 0 auto;
   }
-  text-align: center;
-  @include cel{
-    h1{
+  @include cel {
+    h1 {
       margin: $margen-cel 0 $margen-min;
     }
-    p{
+    p {
       max-width: 70vw;
     }
   }
 }
-section{
+section {
   margin: $margen 0;
-
 }
 
-#bandeja-steps{
+#bandeja-steps {
   display: flex;
   flex-wrap: wrap;
-  .izq{
+  .izq {
     flex: 1 0 60%;
-    img{
+    img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
   }
-  .der{
+  .der {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 0 40%;
-    .info{
+    .info {
       width: 70%;
     }
   }
-  @include cel{
-    .izq, .der{
+  @include cel {
+    .izq,
+    .der {
       flex: 1 0 100%;
       text-align: center;
-      h2{
+      h2 {
         margin-top: $margen;
       }
     }
   }
 }
 
-#headerRooms{
-
-  h2{
+#headerRooms {
+  h2 {
     color: $primario;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     font-size: clamp(1.8rem, 3.5vw, 3.5rem);
-    #exclusive{
+    #exclusive {
       position: absolute;
       top: -40%;
       left: 100%;
       align-self: center;
-      font-size: clamp(1rem, .5vw, .5rem);
+      font-size: clamp(1rem, 0.5vw, 0.5rem);
       color: $primario;
     }
-    #ocho{
-      padding: $margen-min .5rem;
+    #ocho {
+      padding: $margen-min 0.5rem;
       color: $secundario;
       font-size: clamp(6rem, 6vw, 6rem);
       font-weight: bold;
       position: relative;
     }
   }
+}
+
+#cuadricula {
+  margin: $margen 0;
+  background: linear-gradient(90deg, white 3%, $fondo 3%, $fondo 97%, white 97%);
+  .fila {
+    display: flex;
+    flex-wrap: wrap;
+
+    .conte {
+      flex: 1 0 50%;
+      display: inherit;
+      align-items: center;
+      justify-content: center;
+      .bande {
+        width: 70%;
+        margin: 0 0 0 3%;
+        @include cel {
+          padding: $margen 0;
+          margin: 0;
+          text-align: center;
+        }
+      }
+    }
+    img {
+      flex: 1 0 50%;
+      @extend .sombra;
+    }
+
+    &:nth-child(even) {
+      .conte{
+        order: 2;
+        .bande{
+          margin: 0 3% 0 0;
+        }
+      }
+      @include cel {
+       .conte{
+        order: 0;
+       }
+      }
+    }
+  }
+
 }

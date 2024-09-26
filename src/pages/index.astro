@@ -10,6 +10,7 @@ import feed from '../assets/feed.png';
 import rest from '../assets/rest.png';
 import cool from '../assets/cool.png';
 import { Image } from 'astro:assets';
+import Galeria from '../components/Galeria.astro';
 ---
 
 <Layout title="Boutique Hotel in Barra de Potosí México.">
@@ -47,41 +48,53 @@ import { Image } from 'astro:assets';
 		<div id="cuadricula">
 			<div class="fila">
 				<div class="conte">
-					<h3>Observe</h3>
-					<p>Wake up to the sound of the waves and enjoy the <b>stunning view of the Pacific Ocean</b> from your window.</p>
+					<div class="bande"><h3>Observe</h3>
+						<p>Wake up to the sound of the waves and enjoy the <b>stunning view of the Pacific Ocean</b> from your window.</p></div>
 				</div>
 				<Image src={observe} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
 			</div>
 			<div class="fila">
 				<div class="conte">
-					<h3>Enjoy</h3>
-					<p><b>Relax</b> while reading a book, sipping great coffee, or taking a nap in your hammock.</p>
+					<div class="bande"><h3>Enjoy</h3>
+						<p><b>Relax</b> while reading a book, sipping great coffee, or taking a nap in your hammock.</p></div>
 				</div>
 				<Image src={enjoy} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
 			</div>
 			<div class="fila">
 				<div class="conte">
-					<h3>Aliméntate</h3>
+					<div class="bande">
+						<h3>Aliméntate</h3>
 					<p>Our rooms provide a wonderful experience with  equipped <b>kitchenettes</b></p>
+					</div>
 				</div>
 				<Image src={feed} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
 			</div>
 			<div class="fila">
 				<div class="conte">
-					<h3>Rest</h3>
-					<p>We make sure each room is equipped with <b>comfortable beds</b> to give you the rest you’ll appreciate after a day of adventure in nature.</p>
+					<div class="bande">
+						<h3>Rest</h3>
+						<p>We make sure each room is equipped with <b>comfortable beds</b> to give you the rest you'll appreciate after a day of adventure in nature.</p>
+					</div>
 				</div>
 				<Image src={rest} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
 			</div>
 			<div class="fila">
 				<div class="conte">
-					<h3>Cool comfort</h3>
+					<div class="bande">
+						<h3>Cool comfort</h3>
 					<p>No matter the time of year you visit, your room will be fresh and comfortable, as all our rooms have <b>air conditioning</b>.</p>
+					</div>
 				</div>
 				<Image src={cool} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
 			</div>
 		</div>
-
+		</section>
+		<section id="galeria">
+			<div id="carrusel"></div>
+			<div class="grid pantalla-der">
+				<h2>Discover The Blue Crab Lagoon</h2>
+				<Galeria />
+			</div>
 
 		</section>
 	</main>

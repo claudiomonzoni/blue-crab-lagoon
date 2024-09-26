@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import uno from "../assets/gale/1.jpg"
+import dos from "../assets/gale/2.jpg"
+import tres from "../assets/gale/3.jpg"
+import cuatro from "../assets/gale/4.png"
+import cinco from "../assets/gale/5.png"
+import seis from "../assets/gale/6.png"
+import siete from "../assets/gale/7.png"
+import ocho from "../assets/gale/8.png"
+import nueve from "../assets/gale/9.png"
+import diez from "../assets/gale/10.png"
+import once from "../assets/gale/11.png"
+import doce from "../assets/gale/12.png"
+import trece from "../assets/gale/13.png"
+import catorce from "../assets/gale/14.png"
+import quince from "../assets/gale/15.png"
+
+---
+
+<section class="splide" aria-labelledby="carousel-heading">
+  
+    <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide"><Image src={uno} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={dos} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={tres} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={cuatro} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={cinco} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={seis} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={siete} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={ocho} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={nueve} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={diez} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={once} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={doce} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={trece} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={catorce} alt="hotel in Barra de Potosí Mexico" /></li>
+            <li class="splide__slide"><Image src={quince} alt="hotel in Barra de Potosí Mexico" /></li>
+          </ul>
+    </div>
+  </section>
+
+
+  <script>
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css';
+new Splide( '.splide', {
+  type   : 'loop',
+  autoWidth: true,
+  autoHeight: true,
+  perPage: 2,
+} ).mount();
+  </script>
+
+  <style lang="scss">
+    @import '../estilos/variables.scss';
+    li{
+        border: solid 1px white;
+        @include cel{
+            max-height: 60vh;
+            aspect-ratio: 1/2;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+  </style>
