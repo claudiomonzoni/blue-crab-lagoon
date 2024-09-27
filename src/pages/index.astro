@@ -1,193 +1,287 @@
 ---
-import Anchor from '../components/Anchor.astro';
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import steps from '../assets/steps-from-the-sea.jpg';
+import Anchor from "../components/Anchor.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import steps from "../assets/steps-from-the-sea.jpg";
 // imagenes del cuarto
-import observe from '../assets/observe.png';
-import enjoy from '../assets/enjoy.png';
-import feed from '../assets/feed.png';
-import rest from '../assets/rest.png';
-import cool from '../assets/cool.png';
-import sunset from '../assets/sunset-barra-potosi.png';
-import beach from '../assets/beach-lagoon-potosi.png';
-import proximidad from '../assets/proximidad-ixtapa-zihuatanejo.png';
-import aeropuerto from '../assets/ixtapa-zihuatanejo-aeropuerto.png';
-import { Image } from 'astro:assets';
-import Galeria from '../components/Galeria.astro';
-import Slider from '../components/Slider.astro';
+import observe from "../assets/observe.png";
+import enjoy from "../assets/enjoy.png";
+import feed from "../assets/feed.png";
+import rest from "../assets/rest.png";
+import cool from "../assets/cool.png";
+import sunset from "../assets/sunset-barra-potosi.png";
+import beach from "../assets/beach-lagoon-potosi.png";
+import proximidad from "../assets/proximidad-ixtapa-zihuatanejo.png";
+import aeropuerto from "../assets/ixtapa-zihuatanejo-aeropuerto.png";
+import { Image } from "astro:assets";
+import Galeria from "../components/Galeria.astro";
+import Slider from "../components/Slider.astro";
+import Contacto from "../components/Contacto.astro";
 ---
 
 <Layout title="Boutique Hotel in Barra de Potosí México.">
-	<main>
-		<div class="grid contenido" id="heroe">
-			<Hero/>
-			<h1>The ideal Stay <br> <span>in Barra de Potosí</span></h1>
-			<p>
-				Located in Barra de Potosí, a picturesque fishing village, our boutique hotel offers a unique experience of relaxation and adventure. Enjoy the tranquility of the lagoon, the thrill of surfing at the beach, and the convenience of being close to Ixtapa Zihuatanejo and its international airport.
-			</p>
-			<Anchor url="#rooms" clase="btn claro" texto="Book now" />
-		</div>
-		
-		<section id="steps" class="grid pantalla-izq">
-			<div id="bandeja-steps">
-				<div class="izq">
-					<Image src={steps} alt="Steps from the sea" />
-				</div>
+  <main>
+    <div class="grid contenido" id="heroe">
+      <Hero />
+      <h1>The ideal Stay <br /> <span>in Barra de Potosí</span></h1>
+      <p>
+        Located in Barra de Potosí, a picturesque fishing village, our boutique
+        hotel offers a unique experience of relaxation and adventure. Enjoy the
+        tranquility of the lagoon, the thrill of surfing at the beach, and the
+        convenience of being close to Ixtapa Zihuatanejo and its international
+        airport.
+      </p>
+      <Anchor url="#rooms" clase="btn claro" texto="Book now" />
+    </div>
 
-				<div class="der">
-					<div class="info">
-						<h2>Steps from the sea and the lagoon of Barra de Potosí</h2>
-					<p><b>Blue Crab Lagoon</b> offers you the chance to taste the best fresh seafood at more than 20 local restaurants and experience authentic local hospitality.</p>
-					</div>
+    <section id="steps" class="grid pantalla-izq">
+      <div id="bandeja-steps">
+        <div class="izq">
+          <Image src={steps} alt="Steps from the sea" />
+        </div>
 
-				</div>
+        <div class="der">
+          <div class="info">
+            <h2>Steps from the sea and the lagoon of Barra de Potosí</h2>
+            <p>
+              <b>Blue Crab Lagoon</b> offers you the chance to taste the best fresh
+              seafood at more than 20 local restaurants and experience authentic
+              local hospitality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			</div>	
+    <section id="headerRooms" class="grid contenido">
+      <h2>
+        <span id="ocho">8 <span id="exclusive">Exclusive</span></span> rooms near
+        <br /> the sea
+      </h2>
+      <div id="cuadricula">
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Observe</h3>
+              <p>
+                Wake up to the sound of the waves and enjoy the <b
+                  >stunning view of the Pacific Ocean</b
+                > from your window.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={observe}
+            alt="observe the ocean view hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Enjoy</h3>
+              <p>
+                <b>Relax</b> while reading a book, sipping great coffee, or taking
+                a nap in your hammock.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={enjoy}
+            alt="observe the ocean view hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Aliméntate</h3>
+              <p>
+                Our rooms provide a wonderful experience with equipped <b
+                  >kitchenettes</b>
+              </p>
+            </div>
+          </div>
+          <Image
+            src={feed}
+            alt="observe the ocean view hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Rest</h3>
+              <p>
+                We make sure each room is equipped with <b>comfortable beds</b> to
+                give you the rest you'll appreciate after a day of adventure in nature.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={rest}
+            alt="observe the ocean view hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Cool comfort</h3>
+              <p>
+                No matter the time of year you visit, your room will be fresh
+                and comfortable, as all our rooms have <b>air conditioning</b>.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={cool}
+            alt="observe the ocean view hotel in Barra de Potosí Mexico"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="galeria">
+      <div id="carrusel"></div>
+      <div class="grid pantalla-der">
+        <h2>Discover The Blue Crab Lagoon</h2>
+        <Galeria />
+      </div>
+    </section>
 
-		</section>
+    <section>
+      <div class="grid contenido">
+        <h2 class="centro">Services and Amenities</h2>
+        <div id="services">
+          <div class="servicio">
+            <img src="/icos/pool.svg" alt="pool and common areas" />
+            <h3>Pool and common areas</h3>
+            <p>
+              Enjoy our facilities, including a <b
+                >refreshing infinity pool and garden</b
+              >. Relax under the sun or lounge in our shaded area with comfy
+              sofas.
+            </p>
+          </div>
+          <div class="servicio">
+            <img src="/icos/air.svg" alt="Air-conditioned rooms" />
+            <h3>Air-conditioned rooms</h3>
+            <p>
+              Enjoy our facilities, including a <b
+                >refreshing infinity pool and garden</b
+              >. Relax under the sun or lounge in our shaded area with comfy
+              sofas.
+            </p>
+          </div>
+          <div class="servicio">
+            <img src="/icos/internet.svg" alt="Internet" />
+            <h3>Internet</h3>
+            <p>We offer <b>broadband internet</b> in common areas and rooms.</p>
+          </div>
+          <div class="servicio">
+            <img src="/icos/terraces.svg" alt="Terraces" />
+            <h3>Terraces</h3>
+            <p>
+              Enjoy the sunset from your <b>room's terrace</b> and watch as the sun
+              slowly sinks into the Pacific Ocean.
+            </p>
+          </div>
+          <div class="servicio">
+            <img src="/icos/cocinas.svg" alt="Kitchenettes" />
+            <h3>Kitchenettes</h3>
+            <p>
+              Our rooms are equipped with a <b
+                >sink, microwave, and mini-fridge</b
+              >, offering the convenience of preparing a quick meal without
+              leaving your room.
+            </p>
+          </div>
+          <div class="servicio">
+            <img src="/icos/water.svg" alt="hot water" />
+            <h3>Hot Water</h3>
+            <p>
+              All of our 8 rooms feature bathrooms with <b>hot water showers</b
+              >, giving you the comfort of adjusting your shower temperature in
+              the midst of paradise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section id="headerRooms" class="grid contenido">
-			
-			<h2><span id="ocho">8 <span id="exclusive">Exclusive</span></span> rooms near <br> the sea</h2>
-		<div id="cuadricula">
-			<div class="fila">
-				<div class="conte">
-					<div class="bande"><h3>Observe</h3>
-						<p>Wake up to the sound of the waves and enjoy the <b>stunning view of the Pacific Ocean</b> from your window.</p></div>
-				</div>
-				<Image src={observe} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande"><h3>Enjoy</h3>
-						<p><b>Relax</b> while reading a book, sipping great coffee, or taking a nap in your hammock.</p></div>
-				</div>
-				<Image src={enjoy} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande">
-						<h3>Aliméntate</h3>
-					<p>Our rooms provide a wonderful experience with  equipped <b>kitchenettes</b></p>
-					</div>
-				</div>
-				<Image src={feed} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande">
-						<h3>Rest</h3>
-						<p>We make sure each room is equipped with <b>comfortable beds</b> to give you the rest you'll appreciate after a day of adventure in nature.</p>
-					</div>
-				</div>
-				<Image src={rest} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande">
-						<h3>Cool comfort</h3>
-					<p>No matter the time of year you visit, your room will be fresh and comfortable, as all our rooms have <b>air conditioning</b>.</p>
-					</div>
-				</div>
-				<Image src={cool} alt="observe the ocean view hotel in Barra de Potosí Mexico" />
-			</div>
-		</div>
-		</section>
-		<section id="galeria">
-			<div id="carrusel"></div>
-			<div class="grid pantalla-der">
-				<h2>Discover The Blue Crab Lagoon</h2>
-				<Galeria />
-			</div>
-
-		</section>
-
-		<section>
-			<div class="grid contenido">
-				
-				<h2 class="centro">Services and Amenities</h2>
-				<div id="services">
-					<div class="servicio">
-						<img src="/icos/pool.svg" alt="pool and common areas">
-						<h3>Pool and common areas</h3>
-						<p>Enjoy our facilities, including a <b>refreshing infinity pool and garden</b>. Relax under the sun or lounge in our shaded area with comfy sofas.</p>
-					</div>
-					<div class="servicio">
-						<img src="/icos/air.svg" alt="Air-conditioned rooms">
-						<h3>Air-conditioned rooms</h3>
-						<p>Enjoy our facilities, including a <b>refreshing infinity pool and garden</b>. Relax under the sun or lounge in our shaded area with comfy sofas.</p>
-					</div>
-					<div class="servicio">
-						<img src="/icos/internet.svg" alt="Internet">
-						<h3>Internet</h3>
-						<p>We offer <b>broadband internet</b> in common areas and rooms.</p>
-					</div>
-					<div class="servicio">
-						<img src="/icos/terraces.svg" alt="Terraces">
-						<h3>Terraces</h3>
-						<p>Enjoy the sunset from your <b>room's terrace</b> and watch as the sun slowly sinks into the Pacific Ocean.</p>
-					</div>
-					<div class="servicio">
-						<img src="/icos/cocinas.svg" alt="Kitchenettes">
-						<h3>Kitchenettes</h3>
-						<p>Our rooms are equipped with a <b>sink, microwave, and mini-fridge</b>, offering the convenience of preparing a quick meal without leaving your room.</p>
-					</div>
-					<div class="servicio">
-						<img src="/icos/water.svg" alt="hot water">
-						<h3>Hot Water</h3>
-						<p>All of our 8 rooms feature bathrooms with <b>hot water showers</b>, giving you the comfort of adjusting your shower temperature in the midst of paradise.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="headerRooms" class="grid contenido">
-			
-			<h2>Location and surroundings</h2>
-		<div id="cuadricula">
-			<div class="fila">
-				<div class="conte">
-					<div class="bande"><h3>Barra de Potosí</h3>
-						<p>Located in Barra de Potosí, a charming town near Ixtapa Zihuatanejo where you’ll find local fishermen and artisans, Blue Crab Lagoon gives you the <b>chance to savor the best fresh seafood</b> in the area's restaurants and experience authentic local hospitality.</p></div>
-				</div>
-				<Image src={sunset} alt="Sunset in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande"><h3>Beach and lagoon</h3>
-						<p>Just a few meters from the beach and the lagoon, our hotel offers easy access to both natural areas. During the rainy season, the sandbar that connects the sea and lagoon <b>becomes a spectacular natural sight</b> not to be missed.</p></div>
-				</div>
-				<Image src={beach} alt="Beach and lagoon hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande">
-						<h3>Proximity a Ixtapa Zihuatanejo</h3>
-					<p><b>We're just a 15-minute drive</b> from the port of Zihuatanejo and Ixtapa, providing you the convenience of exploring these vibrant towns and their beaches.</p>
-					</div>
-				</div>
-				<Image src={proximidad} alt="Near to Ixtapa Zihuatanejo hotel in Barra de Potosí Mexico" />
-			</div>
-			<div class="fila">
-				<div class="conte">
-					<div class="bande">
-						<h3>Access to the Ixtapa Zihuatanejo international airport</h3>
-						<p>Airport is <b>only 10 minutes away</b>, making your arrival and departure hassle-free.</p>
-					</div>
-				</div>
-				<Image src={aeropuerto} alt=" hotel in Barra de Potosí Mexico near to the Ixtapa Zihuatanejo international airport" />
-			</div>
-			
-		</div>
-		</section>
-		<section>
-			<div class="grid pantalla-der">
-				<h2>Activities and adventure</h2>
-				<Slider />
-			</div>
-		</section>
-	</main>
+    <section id="headerRooms" class="grid contenido">
+      <h2>Location and surroundings</h2>
+      <div id="cuadricula">
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Barra de Potosí</h3>
+              <p>
+                Located in Barra de Potosí, a charming town near Ixtapa
+                Zihuatanejo where you’ll find local fishermen and artisans, Blue
+                Crab Lagoon gives you the <b
+                  >chance to savor the best fresh seafood</b
+                > in the area's restaurants and experience authentic local hospitality.
+              </p>
+            </div>
+          </div>
+          <Image src={sunset} alt="Sunset in Barra de Potosí Mexico" />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Beach and lagoon</h3>
+              <p>
+                Just a few meters from the beach and the lagoon, our hotel
+                offers easy access to both natural areas. During the rainy
+                season, the sandbar that connects the sea and lagoon <b
+                  >becomes a spectacular natural sight</b
+                > not to be missed.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={beach}
+            alt="Beach and lagoon hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Proximity a Ixtapa Zihuatanejo</h3>
+              <p>
+                <b>We're just a 15-minute drive</b> from the port of Zihuatanejo
+                and Ixtapa, providing you the convenience of exploring these vibrant
+                towns and their beaches.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={proximidad}
+            alt="Near to Ixtapa Zihuatanejo hotel in Barra de Potosí Mexico"
+          />
+        </div>
+        <div class="fila">
+          <div class="conte">
+            <div class="bande">
+              <h3>Access to the Ixtapa Zihuatanejo international airport</h3>
+              <p>
+                Airport is <b>only 10 minutes away</b>, making your arrival and
+                departure hassle-free.
+              </p>
+            </div>
+          </div>
+          <Image
+            src={aeropuerto}
+            alt=" hotel in Barra de Potosí Mexico near to the Ixtapa Zihuatanejo international airport"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="grid pantalla-der">
+        <h2>Activities and adventure</h2>
+        <Slider />
+      </div>
+    </section>
+    <section class="grid pantalla-izq">
+      <Contacto />
+    </section>
+  </main>
 </Layout>
-
-
