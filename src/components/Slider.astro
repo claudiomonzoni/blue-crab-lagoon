@@ -1,0 +1,259 @@
+---
+import { Image } from "astro:assets";
+import wild from "../assets/wildlife.png";
+import whales from "../assets/whales.png";
+import surf from "../assets/surf.png";
+import kayak from "../assets/kayak.png";
+import fishing from "../assets/fishing.png";
+import hiking from "../assets/hiking.png";
+import ride from "../assets/ride-horse.png";
+import crab from "../assets/catch-crab.png";
+import scuba from "../assets/scuba-dive.png";
+import refuge from "../assets/animal-refuge.png";
+---
+
+<section id="slider" class="splide" aria-labelledby="carousel-heading">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">
+        <div class="item">
+          <Image src={wild} alt="hotel in Barra de Potosí Mexico wild life" />
+          <div class="conte">
+            <div class="bande">
+              <h3>Wildlife Watching</h3>
+              <p>
+                The nearby lagoon offers birdwatching and wildlife viewing,
+                giving you a unique experience of connecting with nature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={whales}
+            alt="hotel in Barra de Potosí Mexico Humpback Whale Season"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Humpback Whale Season</h3>
+              <p>
+                From December 15 to March 20, enjoy the sight of humpback whales
+                near the beach. An unforgettable experience you can only find in
+                this region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={surf}
+            alt="hotel in Barra de Potosí Mexico Humpback Whale Season"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Surfing</h3>
+              <p>
+                If you enjoy surfing, the nearby waves are perfect for this
+                activity. Whether you're a beginner or an experienced surfer,
+                you'll find the ideal spot to enjoy the sea.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={kayak}
+            alt="hotel in Barra de Potosí Mexico Kayaking in the lagoon"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Kayaking in the lagoon</h3>
+              <p>
+                Explore the calm waters of the lagoon by kayak, a perfect
+                activity for the whole family. Enjoy the scenery as you paddle
+                and discover local wildlife from a unique perspective.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={fishing}
+            alt="hotel in Barra de Potosí Mexico Fishing in Barra de Potosí"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Fishing in Barra de Potosí</h3>
+              <p>
+                The perfect spot for fishing, whether from the shore or on a
+                boat excursion. Catch a variety of fish while enjoying the calm
+                and beauty of the natural surroundings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={hiking}
+            alt="hotel in Barra de Potosí Mexico Hiking in Barra de Potosí"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Hiking in Barra de Potosí</h3>
+              <p>
+                Explore the nature of Barra de Potosí by hiking its trails and
+                climbing Cerro del Guamilule for breathtaking views of the sea.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={ride}
+            alt="hotel in Barra de Potosí Mexico Horseback Riding on the Beach"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Horseback Riding on the Beach</h3>
+              <p>
+                Experience a unique adventure by riding horseback along the
+                beach. Feel the ocean breeze as you ride along the shore, a
+                relaxing and memorable activity for all skill levels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={crab}
+            alt="hotel in Barra de Potosí Mexico Blue Crab catching"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Blue Crab catching</h3>
+              <p>
+                Explore the search for crabs, experience the fun, and enjoy an
+                exciting activity in the lagoon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={scuba}
+            alt="hotel in Barra de Potosí Mexico scuba diving"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Diving</h3>
+              <p>
+                Dive into a fascinating underwater world in our crystal-clear
+                waters. Swim among colorful reefs and discover a variety of
+                marine life. It’s a unique experience in Barra de Potosí!
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="item">
+          <Image
+            src={refuge}
+            alt="hotel in Barra de Potosí Mexico scuba diving"
+          />
+          <div class="conte">
+            <div class="bande">
+              <h3>Animal Refuge</h3>
+              <p>
+                Visit a refuge for endemic animals of the area, where you’ll
+                learn more about local flora and fauna—a must-see experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from "@splidejs/splide";
+  import "@splidejs/splide/css";
+  new Splide("#slider", {
+    perPage: 2,
+    mediaQuery: "max",
+    breakpoints: {
+      640: {
+        perPage: 1,
+        gap: "0",
+      },
+    },
+  }).mount();
+</script>
+
+<style lang="scss">
+  @import "../estilos/variables.scss";
+  .item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    @include cel {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    img {
+      grid-column: 1;
+      grid-row: 1;
+      @include cel {
+        grid-column: 2;
+        width: 100%;
+      }
+    }
+
+    .conte {
+      grid-column: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .bande {
+        width: 70%;
+        padding: $margen-min;
+      }
+      @include cel {
+        grid-row: 2;
+        .bande {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    @include cel {
+      max-height: 60vh;
+      aspect-ratio: 1/2;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 1px solid white;
+      }
+    }
+  }
+</style>

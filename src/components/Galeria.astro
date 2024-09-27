@@ -18,7 +18,7 @@ import quince from "../assets/gale/15.png"
 
 ---
 
-<section class="splide" aria-labelledby="carousel-heading">
+<section id="galeria" class="splide" aria-labelledby="carousel-heading">
   
     <div class="splide__track">
           <ul class="splide__list">
@@ -39,6 +39,7 @@ import quince from "../assets/gale/15.png"
             <li class="splide__slide"><Image src={quince} alt="hotel in Barra de Potosí Mexico" /></li>
           </ul>
     </div>
+    
   </section>
 
 
@@ -47,6 +48,7 @@ import Splide from '@splidejs/splide';
 import '@splidejs/splide/css';
 new Splide( '.splide', {
   type   : 'loop',
+  focus  : 'center',
   autoWidth: true,
   autoHeight: true,
   perPage: 2,
