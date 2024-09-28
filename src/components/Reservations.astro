@@ -1,0 +1,117 @@
+---
+---
+
+<div id="reserva">
+    <div class="bande">
+        <h2>Reservations</h2>
+        <p>Contact us through the form, providing the necessary information to receive a personalized quote for your stay.</p>
+
+        <form>
+            
+              <label for="name">Full Name
+              <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Full Name*"
+              />
+            </label>
+
+            <label for="guests">Number of guests
+            <input
+              type="number"
+              name="guests"
+              id="guests"
+              required
+              placeholder="number of guests*"
+            />
+          </label>
+
+            <label for="checkin">Check in date
+            <input
+              type="date"
+              name="checkin"
+              required
+              id="check-in"
+              placeholder="Check-in date*"
+            />
+          </label>
+
+            <label for="checkout">Check out date
+            <input
+              type="date"
+              name="checkout"
+              id="check-out"
+              placeholder="Check-out date*"
+            />
+          </label>
+          <label for="email">Email
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email*"
+            />
+          </label>
+            <!-- <button type="submit"  id="contactoBtn" >Get in touch</button> -->
+            <a href="#" id="contactoBtn" class="desactivado">
+                Request a reservation quote
+            </a>
+          </form>
+          <div id="msj"></div>
+
+
+    </div>
+</div>
+
+<script>
+const name = document.getElementById("name") as HTMLInputElement;
+const guests = document.getElementById("guests") as HTMLInputElement;
+const checkin = document.getElementById("check-in") as HTMLInputElement;
+const checkout = document.getElementById("check-out") as HTMLInputElement;
+const email = document.getElementById("email") as HTMLInputElement;
+const empezar = document.getElementById("contactoBtn") as HTMLAnchorElement;
+const numeroWhats = 15022164433;
+
+console.log(empezar)
+//user agent
+const ua = navigator.userAgent;
+
+//si es cel app si es pc web.app
+const enviar = (e: Event) => {
+  e.preventDefault();
+
+  if (name.value === "" || guests.value === "" || checkin.value === "" || checkout.value === "" || email.value === "" ) {
+    console.log("vacio");
+  } else {
+    empezar.classList.remove("desactivado");
+  }
+  //comprobar si es cel o pc
+  let whats = "";
+  if (/Mobile/i.test(ua)) {
+    whats = `https://api.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+  } else {
+    whats = `https://web.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+  }
+
+  envio(whats, name.value, guests.value, checkin.value, checkout.value, email.value);
+};
+
+const envio = (whats: string, name: string, guests:any, checkin:any, checkout:any, email:string) => {
+
+  const url = `
+  ${whats}Full%20Name:%20${name}%0aGuests:%20${guests}%0aCheck-in:%20${checkin}%0aCheck-out:%20${checkout}%0aEmail:%20${email}%0aComments:%20
+  `;
+
+  console.log(url)
+  empezar.href = url;
+};
+
+name.addEventListener("focusout", enviar);
+guests.addEventListener("focusout", enviar);
+checkin.addEventListener("focusout", enviar);
+checkout.addEventListener("focusout", enviar);
+email.addEventListener("focusout", enviar);
+</script>

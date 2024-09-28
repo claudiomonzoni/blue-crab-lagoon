@@ -331,3 +331,10 @@ section {
     }
   }
 }
+.leaflet-control-attribution {
+  display: none;
+}
+.desactivado {
+pointer-events: none;
+filter: blur(2px);
+}
