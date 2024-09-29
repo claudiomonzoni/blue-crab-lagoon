@@ -88,6 +88,7 @@ import cerro from "../assets/cerro-guamilule.png";
   @import "../estilos/variables.scss";
 
   #reserva {
+    // min-height: 0dvh;
     padding: $margen $margen 20dvh $margen;
     display: flex;
     justify-content: center;
@@ -139,8 +140,11 @@ import cerro from "../assets/cerro-guamilule.png";
   }
   #reservations {
     position: relative;
+    padding-bottom: 42dvh;
+    background: url("../assets/nubes.png") repeat-x;
+    background-position: left 70%;
+    background-size: contain;
     #cerro {
-      border: solid;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -150,6 +154,19 @@ import cerro from "../assets/cerro-guamilule.png";
         height: auto;
         object-fit: cover;
       }
+    }
+    
+    @include cel {
+      background-position: left 90%;
+      padding-bottom: 0dvh;
+    }
+    @include tableta {
+      background-position: left 90%;
+      padding-bottom: 7dvh;
+    }
+    @include tableta_land {
+      background-position: left 90%;
+      padding-bottom: 26dvh;
     }
   }
 </style>
