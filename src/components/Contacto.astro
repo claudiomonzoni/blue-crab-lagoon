@@ -3,7 +3,9 @@
 ---
 
 <div id="contacto">
-  <div id="mapa"></div>
+  <div id="mapaconte">
+    <div id="mapa"></div>
+  </div>
   <div id="info">
     <div id="bande">
       <h3>The Blue Crab Lagoon Hotel</h3>
@@ -19,16 +21,18 @@
           <a href="https://wa.me/527551111021">+52 755 111 1021</a>
         </li>
         <li>
-          <img src="/icos/email.svg" alt="email the blue crab lagoon" /><a
-            href="mailto:thebluecrablagoon@gmail.com"
-            >thebluecrablagoon@gmail.com</a>
+          <img src="/icos/email.svg" alt="email the blue crab lagoon" />
+          <a href="mailto:thebluecrablagoon@gmail.com"
+            >thebluecrablagoon@gmail.com</a
+          >
         </li>
         <li>
           <img src="/icos/pin.svg" alt="map the blue crab lagoon" /><a
             href="https://maps.app.goo.gl/1nK1MtnfayNL3KKN7"
             target="_blank"
             >Calle taxistas, Mza. No 5, Barra de Potosí, C.P. 40880 Barra de
-            Potosí Gro. México.</a>
+            Potosí Gro. México.</a
+          >
         </li>
       </ul>
     </div>
@@ -36,18 +40,32 @@
 </div>
 
 <style lang="scss">
+  @import "../estilos/variables.scss";
   #contacto {
-    display: flex;
-    height: 60dvh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
     flex-wrap: wrap;
+    @include cel {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    
   }
-  #mapa {
-    flex: 1 0 60%;
-    width: 100%;
-    height: 100%;
+  #mapaconte {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    min-height: 60dvh;
+
+    #mapa {
+      width: 100%;
+      height: 100%;
+    }
+   
   }
   #info {
-    flex: 1 0 40%;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,18 +74,32 @@
       border-bottom: solid 1px #b67b6a;
       padding: 4rem 0;
       width: 70%;
-      p{
+      p {
         margin: 1rem 0;
       }
-      
+
       li {
         margin: 0;
         list-style: none;
         display: flex;
-        padding:.2rem 0;
-        img{
-          margin: 0 .5rem 0 0;
+        padding: 0.2rem 0;
+        img {
+          margin: 0 0.5rem 0 0;
         }
+      }
+    }
+  }
+
+  @include cel {
+    #mapaconte {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+    #info {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      #bande {
+        border-top: none;
       }
     }
   }

@@ -153,6 +153,9 @@ b {
     grid-column: contenido / pantalla-end;
   }
 }
+.pantalla-reservar > * {
+  grid-column: contenido;
+}
 
 #heroe {
   h1 {

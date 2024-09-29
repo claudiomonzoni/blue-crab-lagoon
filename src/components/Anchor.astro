@@ -1,5 +1,6 @@
 ---
 interface Props {
+    id: string;
     url: string;
     clase: string;
     texto: string;
@@ -8,7 +9,7 @@ interface Props {
 const { url, clase, texto, ...rest } = Astro.props;
 ---
 
-<a href={url} class:list={[clase]} {...rest} set:html={texto}></a>
+<a href={url} class:list={[clase]} {...rest} set:html={texto} {...rest}></a>
 
 <style lang="scss">
 	@import "../estilos/variables.scss";
@@ -34,6 +35,7 @@ const { url, clase, texto, ...rest } = Astro.props;
     .oscuro{
         border: none;
         background: $secundario;
+        color: white;
         &:hover{
             color: white;
             background: $acento;

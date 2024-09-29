@@ -1,24 +1,33 @@
 ---
+import Anchor from "./Anchor.astro";
+import { Image } from "astro:assets";
+import cerro from "../assets/cerro-guamilule.png";
 ---
 
-<div id="reserva">
-    <div class="bande">
+<div id="reservations">
+  <div class="grid contenido">
+    <div id="reserva">
+      <div id="bandeja">
         <h2>Reservations</h2>
-        <p>Contact us through the form, providing the necessary information to receive a personalized quote for your stay.</p>
+        <p>
+          Contact us through the form, providing the necessary information to
+          receive a personalized quote for your stay.
+        </p>
 
         <form>
-            
-              <label for="name">Full Name
-              <input
+          <label for="name"
+            >Full Name
+            <input
               type="text"
               name="name"
               id="name"
               required
               placeholder="Full Name*"
-              />
-            </label>
+            />
+          </label>
 
-            <label for="guests">Number of guests
+          <label for="guests"
+            >Number of guests
             <input
               type="number"
               name="guests"
@@ -28,7 +37,8 @@
             />
           </label>
 
-            <label for="checkin">Check in date
+          <label for="checkin"
+            >Check in date
             <input
               type="date"
               name="checkin"
@@ -38,7 +48,8 @@
             />
           </label>
 
-            <label for="checkout">Check out date
+          <label for="checkout"
+            >Check out date
             <input
               type="date"
               name="checkout"
@@ -46,7 +57,8 @@
               placeholder="Check-out date*"
             />
           </label>
-          <label for="email">Email
+          <label for="email"
+            >Email
             <input
               type="email"
               name="email"
@@ -55,63 +67,157 @@
               placeholder="Email*"
             />
           </label>
-            <!-- <button type="submit"  id="contactoBtn" >Get in touch</button> -->
-            <a href="#" id="contactoBtn" class="desactivado">
-                Request a reservation quote
-            </a>
-          </form>
-          <div id="msj"></div>
-
-
+          <!-- <button type="submit"  id="contactoBtn" >Get in touch</button> -->
+          <Anchor
+            url="#"
+            clase="btn oscuro desactivado"
+            texto="Request a reservation quote"
+            id="contactoBtn"
+          />
+        </form>
+        <div id="msj"></div>
+      </div>
     </div>
+    <div id="cerro">
+      <Image src={cerro} alt="cerro guamilule" />
+    </div>
+  </div>
 </div>
 
+<style lang="scss">
+  @import "../estilos/variables.scss";
+
+  #reserva {
+    padding: $margen $margen 20dvh $margen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend .sombra;
+    background: $fondo;
+
+    @include cel {
+      margin: 0 $margen;
+      padding: $margen-cel $margen-cel 20dvh $margen-cel;
+    }
+  }
+  #bandeja {
+    width: 60%;
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: $margen-cel;
+    }
+    label {
+      flex: 1 0 100%;
+      margin-bottom: 0.7rem;
+      color: $secundario;
+      font-weight: bold;
+    }
+    input {
+      border-radius: 0.3rem;
+      color: white;
+      width: 100%;
+      border: none;
+      background: $gris;
+      padding: 0.7rem 0.5rem;
+      font-size: clamp(1rem, 1rem, 1rem);
+    }
+    input::placeholder {
+      color: white;
+      font-size: clamp(1rem, 1rem, 1rem);
+    }
+    input:-ms-input-placeholder {
+      color: white;
+    }
+    input::-moz-placeholder {
+      color: white;
+    }
+    @include cel {
+      width: 90%;
+    }
+  }
+  #reservations {
+    position: relative;
+    #cerro {
+      border: solid;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+</style>
+
 <script>
-const name = document.getElementById("name") as HTMLInputElement;
-const guests = document.getElementById("guests") as HTMLInputElement;
-const checkin = document.getElementById("check-in") as HTMLInputElement;
-const checkout = document.getElementById("check-out") as HTMLInputElement;
-const email = document.getElementById("email") as HTMLInputElement;
-const empezar = document.getElementById("contactoBtn") as HTMLAnchorElement;
-const numeroWhats = 15022164433;
+  const name = document.getElementById("name") as HTMLInputElement;
+  const guests = document.getElementById("guests") as HTMLInputElement;
+  const checkin = document.getElementById("check-in") as HTMLInputElement;
+  const checkout = document.getElementById("check-out") as HTMLInputElement;
+  const email = document.getElementById("email") as HTMLInputElement;
+  const empezar = document.getElementById("contactoBtn") as HTMLAnchorElement;
+  const numeroWhats = 15022164433;
 
-console.log(empezar)
-//user agent
-const ua = navigator.userAgent;
+  //user agent
+  const ua = navigator.userAgent;
 
-//si es cel app si es pc web.app
-const enviar = (e: Event) => {
-  e.preventDefault();
+  //si es cel app si es pc web.app
+  const enviar = (e: Event) => {
+    e.preventDefault();
 
-  if (name.value === "" || guests.value === "" || checkin.value === "" || checkout.value === "" || email.value === "" ) {
-    console.log("vacio");
-  } else {
-    empezar.classList.remove("desactivado");
-  }
-  //comprobar si es cel o pc
-  let whats = "";
-  if (/Mobile/i.test(ua)) {
-    whats = `https://api.whatsapp.com/send/?phone=${numeroWhats}&text=`;
-  } else {
-    whats = `https://web.whatsapp.com/send/?phone=${numeroWhats}&text=`;
-  }
+    if (
+      name.value === "" ||
+      guests.value === "" ||
+      checkin.value === "" ||
+      checkout.value === "" ||
+      email.value === ""
+    ) {
+      console.log("vacio");
+    } else {
+      empezar.classList.remove("desactivado");
+    }
+    //comprobar si es cel o pc
+    let whats = "";
+    if (/Mobile/i.test(ua)) {
+      whats = `https://api.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+    } else {
+      whats = `https://web.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+    }
 
-  envio(whats, name.value, guests.value, checkin.value, checkout.value, email.value);
-};
+    envio(
+      whats,
+      name.value,
+      guests.value,
+      checkin.value,
+      checkout.value,
+      email.value
+    );
+  };
 
-const envio = (whats: string, name: string, guests:any, checkin:any, checkout:any, email:string) => {
-
-  const url = `
+  const envio = (
+    whats: string,
+    name: string,
+    guests: any,
+    checkin: any,
+    checkout: any,
+    email: string
+  ) => {
+    const url = `
   ${whats}Full%20Name:%20${name}%0aGuests:%20${guests}%0aCheck-in:%20${checkin}%0aCheck-out:%20${checkout}%0aEmail:%20${email}%0aComments:%20
   `;
 
-  console.log(url)
-  empezar.href = url;
-};
+    console.log(url);
+    empezar.href = url;
+  };
 
-name.addEventListener("focusout", enviar);
-guests.addEventListener("focusout", enviar);
-checkin.addEventListener("focusout", enviar);
-checkout.addEventListener("focusout", enviar);
-email.addEventListener("focusout", enviar);
+  name.addEventListener("focusout", enviar);
+  guests.addEventListener("focusout", enviar);
+  checkin.addEventListener("focusout", enviar);
+  checkout.addEventListener("focusout", enviar);
+  email.addEventListener("focusout", enviar);
 </script>
