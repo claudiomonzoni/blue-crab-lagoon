@@ -185,6 +185,7 @@ b {
     }
     p {
       max-width: 70vw;
+      text-align: center;
     }
   }
 }
@@ -192,6 +193,9 @@ section {
   margin: $margen 0;
 }
 
+.ultima-seccion {
+  margin: $margen 0 0 0;
+}
 #bandeja-steps {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,77 @@
+---
+
+---
+
+<footer>
+  <div class="grid contenido">
+    <div class="bande">
+      <ul>
+        <li><a href="#headerRooms">The rooms</a></li>
+        <li><a href="#galeria">The place</a></li>
+        <li><a href="#services">The services</a></li>
+        <li><a href="#slider">The activities</a></li>
+        <li>
+          <a href="/es/"
+            ><img src="./mex-flag.jpg" alt="Español" class="flag" /></a
+          >
+        </li>
+        <li><img src="/scuba-flag.jpg" alt="Scuba dive" class="flag" /></li>
+      </ul>
+      <img
+        id="logo"
+        src="./the-blue-crab-lagoon-logo-footer.svg"
+        alt="Hotel The blue crab lagoon Barra de Potosí"
+      />
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  @import "../estilos/variables";
+  footer {
+    background: $secundario;
+    display: flex;
+    justify-content: center;
+
+    .bande{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+    ul {
+      border-top: solid 1px white;
+      display: flex;
+      justify-content: center;
+      padding: $margen-cel 0;
+      flex: 1 0 100%;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      color: white;
+    }
+    #logo {
+      width: 9vw;
+      margin: 0 auto;
+      padding-bottom: $margen;
+    }
+    
+    @include cel {
+        ul{
+            flex-direction: column;
+            align-items: center;
+            li{
+                text-align: center;
+                padding-bottom: $margen-min;
+                margin: 0;
+            }
+        }
+        #logo{
+            width: 40vw;
+      }
+    }
+  }
+</style>

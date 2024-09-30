@@ -18,6 +18,7 @@ import Galeria from "../components/Galeria.astro";
 import Slider from "../components/Slider.astro";
 import Contacto from "../components/Contacto.astro";
 import Reservations from "../components/Reservations.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <Layout title="Boutique Hotel in Barra de Potosí México.">
@@ -284,8 +285,9 @@ import Reservations from "../components/Reservations.astro";
     <section class="grid pantalla-izq">
       <Contacto />
     </section>
-    <section id="reservations">
+    <section id="reservations" class="ultima-seccion">
       <Reservations />
     </section>
+    <Footer />
   </main>
 </Layout>
