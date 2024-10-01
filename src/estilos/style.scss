@@ -199,6 +199,7 @@ section {
 #bandeja-steps {
   display: flex;
   flex-wrap: wrap;
+
   .izq {
     flex: 1 0 60%;
     img {
@@ -229,6 +230,9 @@ section {
 }
 
 #headerRooms {
+  background: url(/palmas.webp) no-repeat;
+  background-size: 25%;
+  background-position: 0% 0vw;
   h2 {
     color: $primario;
     display: flex;
@@ -252,12 +256,57 @@ section {
       position: relative;
     }
   }
+  @include cel {
+    background-size: 35%;
+    background-position: 0% -2vw;
+  }
+}
+
+#headerRooms2 {
+#cocos{
+  margin: 0 auto;
+  width: 30vw;
+  max-width: 200px;
+}
+  h2 {
+    color: $primario;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+    #exclusive {
+      position: absolute;
+      top: -40%;
+      left: 100%;
+      align-self: center;
+      font-size: clamp(1rem, 0.5vw, 0.5rem);
+      color: $primario;
+    }
+    #ocho {
+      padding: $margen-min 0.5rem;
+      color: $secundario;
+      font-size: clamp(6rem, 6vw, 6rem);
+      font-weight: bold;
+      position: relative;
+    }
+  }
+  @include cel {
+    background-size: 35%;
+    background-position: 0% -2vw;
+  }
 }
 
 #cuadricula {
   margin: $margen 0;
-  background: linear-gradient(90deg, white 3%, $fondo 3%, $fondo 97%, white 97%);
-  h3{
+  background: linear-gradient(
+    90deg,
+    transparent 3%,
+    $fondo 3%,
+    $fondo 97%,
+    transparent 97%
+  );
+  h3 {
     font-size: clamp(1.8rem, 2vw, 2rem);
     color: $acento;
   }
@@ -270,12 +319,12 @@ section {
       display: inherit;
       align-items: center;
       justify-content: center;
-      
+
       @include tableta_land {
         flex: 1 0 40%;
         max-width: 50%;
       }
-      
+
       .bande {
         width: 70%;
         margin: 0 0 0 3%;
@@ -289,7 +338,6 @@ section {
           margin: 0;
           text-align: center;
         }
-        
       }
     }
     img {
@@ -302,27 +350,26 @@ section {
     }
 
     &:nth-child(even) {
-      .conte{
+      .conte {
         order: 2;
-        .bande{
+        .bande {
           margin: 0 3% 0 0;
         }
       }
       @include cel {
-       .conte{
-        order: 0;
-       }
+        .conte {
+          order: 0;
+        }
       }
       @include tableta {
-       .conte{
-        order: 0;
-       }
+        .conte {
+          order: 0;
+        }
       }
     }
   }
-
 }
-.centro{
+.centro {
   text-align: center;
 }
 
@@ -342,6 +389,6 @@ section {
   display: none;
 }
 .desactivado {
-pointer-events: none;
-filter: blur(2px);
+  pointer-events: none;
+  filter: blur(2px);
 }
