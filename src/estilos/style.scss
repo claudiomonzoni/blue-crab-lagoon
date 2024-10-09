@@ -378,8 +378,14 @@ section {
   flex-wrap: wrap;
   text-align: center;
   .servicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // align-content: space-between;
     flex: 1 0 33%;
     padding: $margen;
+
     @include cel {
       flex: 1 0 100%;
     }
