@@ -15,25 +15,21 @@ import proximidad from "@/assets/proximidad-ixtapa-zihuatanejo.png";
 import aeropuerto from "@/assets/ixtapa-zihuatanejo-aeropuerto.png";
 import { Image } from "astro:assets";
 import Galeria from "@/components/Galeria.astro";
-import Slider from "@/components/Slider.astro";
+import SliderEs from "@/components/SliderEs.astro";
 import Contacto from "@/components/Contacto.astro";
 import Reservations from "@/components/Reservations.astro";
 import Footer from "@/components/Footer.astro";
 ---
 
-<Layout title="Boutique Hotel in Barra de Potosí México.">
+<Layout title="Boutique Hotel en Barra de Potosí México.">
   <main>
     <div class="grid contenido" id="heroe">
-      <Hero lang="en" />
-      <h1>The ideal Stay <br /> <span>in Barra de Potosí</span></h1>
+      <Hero lang="es" />
+      <h1>El hospedaje ideal<br /> <span>en Barra de Potosí</span></h1>
       <p>
-        Located in Barra de Potosí, a picturesque fishing village, our boutique
-        hotel offers a unique experience of relaxation and adventure. Enjoy the
-        tranquility of the lagoon, the thrill of surfing at the beach, and the
-        convenience of being close to Ixtapa Zihuatanejo and its international
-        airport.
+        Ubicado en Barra de Potosí, un pintoresco pueblo de pescadores, nuestro hotel boutique ofrece una experiencia única de <b>relajación y aventura</b>. Disfruta de la tranquilidad de la laguna, la emoción del surf en la playa y la comodidad de estar cerca de Ixtapa Zihuatanejo y su aeropuerto internacional.
       </p>
-      <Anchor url="#headerRooms" clase="btn claro" texto="Rooms" />
+      <Anchor url="#headerRooms" clase="btn claro" texto="Habitaciones" />
     </div>
 
     <section id="steps" class="grid pantalla-izq">
@@ -44,11 +40,9 @@ import Footer from "@/components/Footer.astro";
 
         <div class="der">
           <div class="info">
-            <h2>Steps from the sea and the lagoon of Barra de Potosí</h2>
+            <h2>A pasos del mar y la laguna de Barra de Potosí</h2>
             <p>
-              <b>Blue Crab Lagoon</b> offers you the chance to taste the best fresh
-              seafood at more than 20 local restaurants and experience authentic
-              local hospitality.
+               <b> Blue Crab Lagoon te ofrece</b> la oportunidad de degustar los mejores mariscos frescos en más de 20 restaurantes de la zona y disfrutar de la auténtica hospitalidad local.
             </p>
           </div>
         </div>
@@ -57,18 +51,16 @@ import Footer from "@/components/Footer.astro";
 
     <section id="headerRooms" class="grid contenido">
       <h2>
-        <span id="ocho">8 <span id="exclusive">Exclusive</span></span> rooms near
-        <br /> the sea
+        <span id="ocho">8 <span id="exclusive">Exclusivas</span></span> habitaciones 
+        <br /> cerca del mar
       </h2>
       <div id="cuadricula">
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Take in the View</h3>
+              <h3>Observa</h3>
               <p>
-                Wake up to the sound of the waves and enjoy the <b
-                  >stunning view of the Pacific Ocean</b
-                > from your window.
+                Despierta con el sonido de las olas y disfruta desde tu ventana la vista del <b>maravilloso océano pacifico</b>.
               </p>
             </div>
           </div>
@@ -80,10 +72,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Enjoy</h3>
+              <h3>Disfruta</h3>
               <p>
-                <b>Relax</b> while reading a book, sipping great coffee, or taking
-                a nap in your hammock.
+                <b>Relájate</b> mientras lees un libro, disfrutas de un gran café o tomas una siesta en tu hamaca.
               </p>
             </div>
           </div>
@@ -95,11 +86,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Dine</h3>
+              <h3>Aliméntate</h3>
               <p>
-                Our rooms provide a wonderful experience with equipped <b
-                  >kitchenettes</b
-                >
+                Nuestras habitaciones ofrecen una gran experiencia al contar con <b>cocinetas</b> equipadas. 
               </p>
             </div>
           </div>
@@ -111,11 +100,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Rest</h3>
+              <h3>Descasa</h3>
               <p>
-                We ensure that each room is equipped with <b>comfortable beds</b
-                >, providing you with the restful sleep you'll appreciate after
-                a day of adventure in nature.
+                Nos aseguramos de equipar cada habitación con <b>camas cómodas</b> que te den descanso, las vas apreciar después de un día de aventura en la naturaleza.
               </p>
             </div>
           </div>
@@ -127,10 +114,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Cool comfort</h3>
+              <h3>Frescura</h3>
               <p>
-                No matter the time of year you visit, your room will be fresh
-                and comfortable, as all our rooms have <b>air conditioning</b>.
+                No importa la época del año que nos visites, tu habitación será fresca y cómoda, todas nuestras habitaciones cuenta con <b>aire acondicionado</b>.
               </p>
             </div>
           </div>
@@ -144,64 +130,53 @@ import Footer from "@/components/Footer.astro";
     <section id="galeria">
       <div id="carrusel"></div>
       <div class="grid pantalla-der">
-        <h2>Discover The Blue Crab Lagoon</h2>
+        <h2>Descubre The Blue Crab Lagoon</h2>
         <Galeria />
       </div>
     </section>
 
     <section>
       <div class="grid contenido">
-        <h2 class="centro">Services and Amenities</h2>
+        <h2 class="centro">Servicios y Amenidades</h2>
         <div id="services">
           <div class="servicio">
             <img src="/icos/pool.svg" alt="pool and common areas" />
-            <h3>Pool and common areas</h3>
+            <h3>Piscina y áreas comunes</h3>
             <p>
-              Enjoy our facilities, including a <b
-                >refreshing infinity pool and garden</b
-              >. Relax under the sun or lounge in our shaded area with comfy
-              sofas.
+                Disfruta de nuestras instalaciones que incluyen una refrescante <b>piscina infinita y un jardín</b>. Relájate bajo el sol o disfruta de nuestro tejaban con sillones.
             </p>
           </div>
           <div class="servicio">
             <img src="/icos/air.svg" alt="Air-conditioned rooms" />
-            <h3>Air-conditioned rooms</h3>
+            <h3>Habitaciones climatizadas</h3>
             <p>
-              Enjoy our facilities, including a <b
-                >refreshing infinity pool and garden</b
-              >. Relax under the sun or lounge in our shaded area with comfy
-              sofas.
+                Nuestras 8 habitaciones cuentas con <b>aire acondicionado </b>garantizando un temperatura optima para tu descanso.
             </p>
           </div>
           <div class="servicio">
             <img src="/icos/internet.svg" alt="Internet" />
             <h3>Internet</h3>
-            <p>We offer <b>broadband internet</b> in common areas and rooms.</p>
+            <p>Contamos con <b>internet de banda ancha</b> en áreas comunes y habitaciones.</p>
           </div>
           <div class="servicio">
             <img src="/icos/terraces.svg" alt="Terraces" />
-            <h3>Terraces</h3>
+            <h3>Terrazas</h3>
             <p>
-              Enjoy the sunset from your <b>room's terrace</b> and watch as the sun
-              slowly sinks into the Pacific Ocean.
+                Disfruta del atardecer desde la <b>terraza de tu habitación</b> y contempla como el sol se esconde lentamente en el océano pacifico.
             </p>
           </div>
           <div class="servicio">
             <img src="/icos/cocinas.svg" alt="Kitchenettes" />
-            <h3>Kitchenettes</h3>
+            <h3>Cocinetas</h3>
             <p>
-              Our rooms are equipped with a <b>sink, microwave, and fridge</b>,
-              offering the convenience of preparing a quick meal without leaving
-              your room.
+                Contamos con habitaciones que cuenta con <b>tarja, microondas y refrigerador</b>, esto te da la comodidad de gozar de un alimento rápido sin salir de tu habitación.
             </p>
           </div>
           <div class="servicio">
             <img src="/icos/water.svg" alt="hot water" />
-            <h3>Hot Water</h3>
+            <h3>Agua caliente</h3>
             <p>
-              All of our 8 rooms feature bathrooms with <b>hot water showers</b
-              >, giving you the comfort of adjusting your shower temperature in
-              the midst of paradise.
+                Nuestros 8 cuartos tienen acceso a baños con <b>regaderas de agua caliente</b>, ten la comodidad de regular la temperatura de tu ducha en medio del paraíso.
             </p>
           </div>
         </div>
@@ -210,18 +185,15 @@ import Footer from "@/components/Footer.astro";
 
     <section id="headerRooms2" class="grid contenido">
       <img src="/cocos.webp" id="cocos" alt="cocos" />
-      <h2>Location and surroundings</h2>
+      <h2>Ubicación y entorno</h2>
       <div id="cuadricula">
         <div class="fila">
           <div class="conte">
             <div class="bande">
               <h3>Barra de Potosí</h3>
               <p>
-                Located in Barra de Potosí, a charming town near Ixtapa
-                Zihuatanejo where you’ll find local fishermen and artisans, Blue
-                Crab Lagoon gives you the <b
-                  >chance to savor the best fresh seafood</b
-                > in the area's restaurants and experience authentic local hospitality.
+                Situado en Barra de Potosí, un encantador pueblo cercano a Ixtapa Zihuatanejo donde encontraras <b>
+                    pescadores y artesanos locales</b>, Blue Crab Lagoon te ofrece la oportunidad de degustar los mejores <b>mariscos frescos</b> en los restaurantes de la zona y disfrutar de la auténtica hospitalidad local.
               </p>
             </div>
           </div>
@@ -230,13 +202,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Beach and lagoon</h3>
+              <h3>Playa y laguna</h3>
               <p>
-                Just a few meters from the beach and the lagoon, our hotel
-                offers easy access to both natural areas. During the rainy
-                season, the sandbar that connects the sea and lagoon <b
-                  >becomes a spectacular natural sight</b
-                > not to be missed.
+                A solo unos metros de la playa y de la laguna, nuestro hotel ofrece fácil acceso a ambas áreas naturales. En temporada de lluvias, la barra que une el mar con la laguna es un <b>espectáculo natural</b> que no te puedes perder.
               </p>
             </div>
           </div>
@@ -248,11 +216,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Proximity to Ixtapa Zihuatanejo</h3>
+              <h3>Proximidad a Ixtapa Zihuatanejo</h3>
               <p>
-                <b>We're just a 15-minute drive</b> from the port of Zihuatanejo
-                and Ixtapa, providing you the convenience of exploring these vibrant
-                towns and their beaches.
+                Estamos <b>a solo 15 minutos</b> en auto del puerto de Zihuatanejo e Ixtapa, brindándote la comodidad de explorar estas vibrantes localidades y sus playas.
               </p>
             </div>
           </div>
@@ -264,10 +230,9 @@ import Footer from "@/components/Footer.astro";
         <div class="fila">
           <div class="conte">
             <div class="bande">
-              <h3>Access to the Ixtapa Zihuatanejo international airport</h3>
+              <h3>Acceso al Aeropuerto Internacional</h3>
               <p>
-                Airport is <b>only 10 minutes away</b>, making your arrival and
-                departure hassle-free.
+                El aeropuerto internacional de Ixtapa Zihuatanejo está a <b>solo 10 minutos</b>, facilitando tu llegada y salida sin complicaciones.
               </p>
             </div>
           </div>
@@ -280,8 +245,8 @@ import Footer from "@/components/Footer.astro";
     </section>
     <section>
       <div class="grid pantalla-der">
-        <h2>Activities and adventure</h2>
-        <Slider />
+        <h2>Actividades y aventura</h2>
+        <SliderEs />
       </div>
     </section>
     <section class="grid pantalla-izq">

@@ -1,4 +1,29 @@
 ---
+const currentLocale = Astro.currentLocale;
+const traduccion ={
+  en: [
+    { encabezado: "Reservations", 
+      texto: "<b>Contact us</b> through the form, providing the necessary information to receive a personalized quote for your stay.",
+      fullname: "Full Name",
+      guests: "Number of guests",
+      checkin: "Check in date",
+      checkout: "Check out date",
+      send: "Request a reservation quote"
+     }
+  ],
+  es: [
+    { encabezado: "Reservationes", 
+      texto: "Contáctanos por medio del formulario, estarás enviándonos los datos necesarios para hacerte llegar  el presupuesto de tu estancia.",
+      fullname: "Nombre completo",
+      guests: "Numero de huespedes",
+      checkin: "Fecha de llegada",
+      checkout: "Fecha de salida",
+      send: "Solcitar un presupuesto"
+     }
+  ]
+  
+}
+
 import Anchor from "./Anchor.astro";
 import { Image } from "astro:assets";
 import cerro from "../assets/cerro-guamilule.png";
@@ -10,10 +35,9 @@ import cerro from "../assets/cerro-guamilule.png";
   <div class="grid contenido">
     <div id="reserva">
       <div id="bandeja">
-        <h2>Reservations</h2>
+        <h2>{traduccion['en'][0].encabezado}</h2>
         <p>
-          <b>Contact us</b> through the form, providing the necessary information to
-          receive a personalized quote for your stay.
+          {traduccion['en'][0].texto}
         </p>
 
         <form>

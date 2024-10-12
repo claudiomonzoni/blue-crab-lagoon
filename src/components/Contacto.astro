@@ -1,6 +1,6 @@
 ---
 // import * as L from "leaflet";
-
+const currentLocale = Astro.currentLocale;
 ---
 
 <div id="contacto">
@@ -9,17 +9,32 @@
   </div>
   <div id="info">
     <div id="bande">
-      <h3>The Blue Crab Lagoon Hotel</h3>
+      {
+        currentLocale === "es" ? (
+          <h3>Hotel The Blue Crab Lagoon</h3>
+        ) : (
+          <h3>The Blue Crab Lagoon Hotel</h3>
+        )
+      }
+
       <p>
-        <b>Contact us if you have any questions</b> about our accommodation services
+        {
+          currentLocale === "es"
+            ? `Contáctanos si tienes más dudas acerca de nuestros servicios de hospedaje o cualquier otro tema relacionado con The Blue Crab Lagoon. Será un placer para nuestro staff que tengas las mejores vacaciones en el paraíso de Barra de Potosí.`
+            : `Contact us if you have any questions about our accommodation services
         or anything else related to The Blue Crab Lagoon. It will be a pleasure for
         our staff to ensure you have the best vacation in the paradise of Barra de
-        Potosí.
+        Potosí.`
+        }
       </p>
       <ul>
         <li>
           <img src="/icos/whatsapp.svg" alt="phone number" />
           <a href="https://wa.me/527551111021">+52 755 111 1021</a>
+        </li>
+        <li>
+          <img src="/icos/whatsapp.svg" alt="phone number" />
+          <a href="https://wa.me/527551111021"><b>USA</b>: +1 502 216 4433</a>
         </li>
         <li>
           <img src="/icos/email.svg" alt="email the blue crab lagoon" />
@@ -51,7 +66,6 @@
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
     }
-    
   }
   #mapaconte {
     grid-column: 1 / span 1;
@@ -62,7 +76,6 @@
       width: 100%;
       height: 100%;
     }
-   
   }
   #info {
     grid-column: 2 / span 1;
@@ -104,7 +117,6 @@
       }
     }
   }
-
 </style>
 <link
   rel="stylesheet"
@@ -114,8 +126,6 @@
 />
 <script src="/js/leaflet.js" is:inline></script>
 <script is:inline>
-
-
   var map = L.map("mapa").setView([17.536472, -101.440818], 15);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 27,
@@ -126,7 +136,7 @@
     .bindPopup("The Blue Crab Lagoon")
     .openPopup();
 
-    console.log(L)
+  console.log(L);
   //     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   // if (isMobile) {
 

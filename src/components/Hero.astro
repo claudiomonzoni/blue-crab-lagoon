@@ -1,31 +1,71 @@
 ---
-import { Picture } from "astro:assets"
-import cover from "../assets/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp"
-import coverCel from "../assets/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp"
-import Anchor from "./Anchor.astro"
+import Anchor from "./Anchor.astro";
 
+const nav = {
+  en: [
+    { url: "#headerRooms", texto: "The rooms" },
+    { url: "#galeria", texto: "The place" },
+    { url: "#services", texto: "The services" },
+    { url: "#slider", texto: "The activities" },
+  ],
+  es: [
+    { url: "#headerRooms", texto: "Los habitaciones" },
+    { url: "#galeria", texto: "El lugar" },
+    { url: "#services", texto: "Los servicios" },
+    { url: "#slider", texto: "Las actividades" },
+  ],
+} as {
+  [key: string]: { url: string; texto: string }[];
+};
+// const currentLocale = Astro.currentLocale;
+const { lang } = Astro.props;
+console.log(lang);
 ---
 
 <div id="hero">
-    <nav>
-        <div class="logo">
-            <img src="./blue-crab-lagoon-hotel-logo.svg" alt="logo">
-        </div>
-        <ul>
-            <li><a href="#headerRooms">The rooms</a></li>
-            <li><a href="#galeria">The place</a></li>
-            <li><a href="#services">The services</a></li>
-            <li><a href="#slider">The activities</a></li>
-            <li><a href="/es/"><img src="./mex-flag.jpg" alt="Español" class="flag"></a></li>
-            <li><img src="/scuba-flag.jpg" alt="Scuba dive" class="flag"></li>
-        </ul>
+  <nav>
+    <div class="logo">
+      <img src="/blue-crab-lagoon-hotel-logo.svg" alt="logo" />
+    </div>
+    <ul>
+      {
+        nav[lang].map((item) => (
+          <li>
+            <a href={item.url}>{item.texto}</a>
+          </li>
+        ))
+      }
+
+      {
+        lang === "es" ? (
+          <li>
+            <a href="/">
+              <img src="/usa-flag.jpg" alt="English" class="flag" />
+            </a>
+          </li>
+        ) : (
+          <li>
+            <a href="/es/">
+              <img src="/mex-flag.jpg" alt="Español" class="flag" />
+            </a>
+          </li>
+        )
+      }
+
+      <li><img src="/scuba-flag.jpg" alt="Scuba dive" class="flag" /></li>
+    </ul>
+    {
+      lang === "es" ? (
+        <Anchor url="#reservations" clase="btn oscuro" texto="Reservar ahora" />
+      ) : (
         <Anchor url="#reservations" clase="btn oscuro" texto="Book now" />
-        
-    </nav>
-    
-    <div id="hero-ima">
-         <!-- <Picture src={cover} alt="Blue Crab Lagoon Hotel in Barra de Potosí" /> -->
-         <!-- <Picture 
+      )
+    }
+  </nav>
+
+  <div id="hero-ima">
+    <!-- <Picture src={cover} alt="Blue Crab Lagoon Hotel in Barra de Potosí" /> -->
+    <!-- <Picture 
          src=''
          alt="Blue Crab Lagoon Hotel in Barra de Potosí"
          widths={[400, 800, 1200]}
@@ -36,110 +76,115 @@ import Anchor from "./Anchor.astro"
             <img src='' alt="Blue Crab Lagoon Hotel in Barra de Potosí" width={cover.width} height={cover.height} />
          </Picture> -->
 
-         <!-- <picture>
+    <!-- <picture>
             <source media="(min-width:479px)" srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp">
             <source media="(max-width:479px)" srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp" width="100" height="100">
             <img src="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" alt="Flowers" style="width:auto;">
           </picture> -->
 
-          <picture>
-            <source srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" media="(min-width: 479px)"/>
-            <source srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp" media="(max-width: 479px)"/>
-            <img src="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp" alt="Blue Crab Lagoon Hotel in Barra de Potosí"/>
-          </picture>
-    </div>
+    <picture>
+      <source
+        srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp"
+        media="(min-width: 479px)"
+      />
+      <source
+        srcset="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover-cel.webp"
+        media="(max-width: 479px)"
+      />
+      <img
+        src="/Blue-Crab-Lagoon-Barra-Potosi-hero-cover.webp"
+        alt="Blue Crab Lagoon Hotel in Barra de Potosí"
+      />
+    </picture>
+  </div>
 </div>
 
 <style lang="scss">
-    @import "../estilos/variables.scss";
-    #hero{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-        height: auto;
-        position: relative;
+  @import "../estilos/variables.scss";
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+    position: relative;
+  }
+  nav {
+    font-family: "Playfair Display", serif;
+
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 100;
+    padding: $margen-min;
+    height: auto;
+    align-items: center;
+    a {
+      color: white;
+      text-shadow: 0px 2px 8px #0e0e0e;
     }
-    nav {
-        font-family: "Playfair Display", serif;
-    
-        display: flex;
-        flex-wrap:wrap;
-        grid-column: 1;
-        grid-row: 1;
-        z-index: 100;
-        padding: $margen-min;
-        height: auto;
-        align-items: center;
-        a{
-            color: white;
-            text-shadow: 0px 2px 8px #0e0e0e;
-        }
-     
-        img{
-            width: 100%;
-            max-width: 15vw;
-            height: auto;
-        }
-        .logo{
-            text-align: left;
-            padding-left: .5rem;
-        }
-        .logo, a{
-            flex: 1 0 content;
-        }
-        ul{
-            flex: 2 0 content;
-        }
-    
+
+    img {
+      width: 100%;
+      max-width: 15vw;
+      height: auto;
     }
-    
-    #hero-ima {
-        width: 100%;
-        height: auto;
-        grid-column: 1;
-        grid-row: 1/-1;
-      picture img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @extend .sombra;
-        }
-        
+    .logo {
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+    .logo,
+    a {
+      flex: 1 0 content;
     }
     ul {
-        display: flex;
-        flex-wrap:wrap;
-        li{
-            list-style: none;
-        }
+      flex: 2 0 content;
     }
+  }
 
+  #hero-ima {
+    width: 100%;
+    height: auto;
+    grid-column: 1;
+    grid-row: 1/-1;
+    picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @extend .sombra;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      list-style: none;
+    }
+  }
 
-    @include cel {
-          #hero-ima img{
-            height: 60dvh;
-          }
-          ul, nav{
-            justify-content: center;
-          }
-          nav img{
-            max-width: 60vw;
-        
-          }
-          nav ul{
-            display: none;
-          }
-          nav a{
-            margin: $margen-cel 0!important;
-        }
-        nav .logo{
-            text-align: center;
-            padding-left: none;
-      
-            
-        }
-        nav {
-            gap: 1rem;
-          }
-        }
+  @include cel {
+    #hero-ima img {
+      height: 60dvh;
+    }
+    ul,
+    nav {
+      justify-content: center;
+    }
+    nav img {
+      max-width: 60vw;
+    }
+    nav ul {
+      display: none;
+    }
+    nav a {
+      margin: $margen-cel 0 !important;
+    }
+    nav .logo {
+      text-align: center;
+      padding-left: none;
+    }
+    nav {
+      gap: 1rem;
+    }
+  }
 </style>

@@ -5,10 +5,11 @@ interface Props {
 
 const { title } = Astro.props;
 import '../estilos/style.scss';
+const currentLocale = Astro.currentLocale;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang=>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
