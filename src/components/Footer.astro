@@ -1,20 +1,52 @@
 ---
 
+const nav = {
+  en: [
+    { url: "#headerRooms", texto: "The rooms" },
+    { url: "#galeria", texto: "The place" },
+    { url: "#services", texto: "The services" },
+    { url: "#slider", texto: "The activities" },
+  ],
+  es: [
+    { url: "#headerRooms", texto: "Los habitaciones" },
+    { url: "#galeria", texto: "El lugar" },
+    { url: "#services", texto: "Los servicios" },
+    { url: "#slider", texto: "Las actividades" },
+  ],
+} as {
+  [key: string]: { url: string; texto: string }[];
+};
+// const currentLocale = Astro.currentLocale;
+const { lang } = Astro.props;
+
 ---
 
 <footer>
   <div class="grid contenido">
     <div class="bande">
       <ul>
-        <li><a href="#headerRooms">The rooms</a></li>
-        <li><a href="#galeria">The place</a></li>
-        <li><a href="#services">The services</a></li>
-        <li><a href="#slider">The activities</a></li>
-        <li>
-          <a href="/es/"
-            ><img src="./mex-flag.jpg" alt="Español" class="flag" /></a
-          >
-        </li>
+        {
+          nav[lang].map((item) => (
+            <li>
+              <a href={item.url}>{item.texto}</a>
+            </li>
+          ))
+        }
+          {
+            lang === "es" ? (
+              <li>
+                <a href="/">
+                  <img src="/usa-flag.jpg" alt="English" class="flag" />
+                </a>
+              </li>
+            ) : (
+              <li>
+                <a href="/es/">
+                  <img src="/mex-flag.jpg" alt="Español" class="flag" />
+                </a>
+              </li>
+            )
+          }
         <li><img src="/scuba-flag.jpg" alt="Scuba dive" class="flag" /></li>
       </ul>
       <img

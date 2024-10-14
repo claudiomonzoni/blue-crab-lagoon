@@ -1,70 +1,73 @@
 ---
-const currentLocale = Astro.currentLocale;
-const traduccion ={
+const traduccion = {
   en: [
-    { encabezado: "Reservations", 
-      texto: "<b>Contact us</b> through the form, providing the necessary information to receive a personalized quote for your stay.",
+    {
+      encabezado: "Reservations",
+      texto:
+        "Contact us through the form, providing the necessary information to receive a personalized quote for your stay.",
       fullname: "Full Name",
       guests: "Number of guests",
       checkin: "Check in date",
       checkout: "Check out date",
-      send: "Request a reservation quote"
-     }
+      send: "Request a reservation quote",
+    },
   ],
   es: [
-    { encabezado: "Reservationes", 
-      texto: "Contáctanos por medio del formulario, estarás enviándonos los datos necesarios para hacerte llegar  el presupuesto de tu estancia.",
+    {
+      encabezado: "Reservaciones",
+      texto:
+        "Contáctanos por medio del formulario, estarás enviándonos los datos necesarios para hacerte llegar  el presupuesto de tu estancia.",
       fullname: "Nombre completo",
       guests: "Numero de huespedes",
       checkin: "Fecha de llegada",
       checkout: "Fecha de salida",
-      send: "Solcitar un presupuesto"
-     }
-  ]
-  
-}
-
+      send: "Solcitar un presupuesto",
+    },
+  ],
+};
 import Anchor from "./Anchor.astro";
 import { Image } from "astro:assets";
 import cerro from "../assets/cerro-guamilule.png";
+
+// const {lang} = Astro.props;
+const lang = Astro.props.lang as "en" | "es";
 ---
 
 <div id="reservations">
-
-  <img src="/racimo.webp" alt="racimo de cocos" id="racimo">
+  <img src="/racimo.webp" alt="racimo de cocos" id="racimo" />
   <div class="grid contenido">
     <div id="reserva">
       <div id="bandeja">
-        <h2>{traduccion['en'][0].encabezado}</h2>
+        <h2>{traduccion[lang][0].encabezado}</h2>
         <p>
-          {traduccion['en'][0].texto}
+          {traduccion[lang][0].texto}
         </p>
 
         <form>
           <label for="name"
-            >Full Name
+            >{traduccion[lang][0].fullname}
             <input
               type="text"
               name="name"
               id="name"
               required
-              placeholder="Full Name*"
+              placeholder={traduccion[lang][0].fullname}
             />
           </label>
 
           <label for="guests"
-            >Number of guests
+            >{traduccion[lang][0].guests}
             <input
               type="number"
               name="guests"
               id="guests"
               required
-              placeholder="number of guests*"
+              placeholder={traduccion[lang][0].guests}
             />
           </label>
 
           <label for="checkin"
-            >Check in date
+            >{traduccion[lang][0].checkin}
             <input
               type="date"
               name="checkin"
@@ -75,7 +78,7 @@ import cerro from "../assets/cerro-guamilule.png";
           </label>
 
           <label for="checkout"
-            >Check out date
+            >{traduccion[lang][0].checkout}
             <input
               type="date"
               name="checkout"
@@ -97,7 +100,7 @@ import cerro from "../assets/cerro-guamilule.png";
           <Anchor
             url="#"
             clase="btn oscuro desactivado"
-            texto="Request a reservation quote"
+            texto={traduccion[lang][0].send}
             id="contactoBtn"
           />
         </form>
@@ -191,12 +194,11 @@ import cerro from "../assets/cerro-guamilule.png";
       @include cel {
         width: 40vw;
       }
-      @include tableta_land{
+      @include tableta_land {
         width: 20vw;
-
       }
     }
-    
+
     @include cel {
       background-position: left 90%;
       padding-bottom: 0dvh;
@@ -220,6 +222,8 @@ import cerro from "../assets/cerro-guamilule.png";
   const email = document.getElementById("email") as HTMLInputElement;
   const empezar = document.getElementById("contactoBtn") as HTMLAnchorElement;
   const numeroWhats = 15022164433;
+
+  console.log(window.location.pathname + ' location');
 
   //user agent
   const ua = navigator.userAgent;
@@ -268,9 +272,17 @@ import cerro from "../assets/cerro-guamilule.png";
     const url = `
   ${whats}Full%20Name:%20${name}%0aGuests:%20${guests}%0aCheck-in:%20${checkin}%0aCheck-out:%20${checkout}%0aEmail:%20${email}%0aComments:%20
   `;
+    const urlEs = `
+  ${whats}Nombre%20Completo:%20${name}%0aHuespedes:%20${guests}%0aIngreso:%20${checkin}%0aSalida:%20${checkout}%0aEmail:%20${email}%0aComentarios:%20
+  `;
 
-    console.log(url);
+  if (window.location.pathname === "/") {
     empezar.href = url;
+  } else {
+    empezar.href = urlEs;
+  }
+
+    // empezar.href = url;
   };
 
   name.addEventListener("focusout", enviar);
